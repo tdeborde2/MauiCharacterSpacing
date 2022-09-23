@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCharacterSpacing.MainPage"
+             xmlns:controls="clr-namespace:MauiCharacterSpacing.Controls">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="MAUI Button"
+                FontSize="32"
+                HorizontalOptions="Center"/>
+
+            <Button
+                Text="Change CharacterSpacing"
+                CharacterSpacing="2"
+                Clicked="CharacterSpacingButton_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Button
+                Text="Change Text"
+                CharacterSpacing="2"
+                Clicked="TextButton_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Custom Button with workaround"
+                FontSize="32"
+                HorizontalOptions="Center"/>
+
+            <controls:CustomButton
+                Text="Change CharacterSpacing"
+                Clicked="CharacterSpacingButton_Clicked"
+                CharacterSpacing="2"
+                HorizontalOptions="Center"/>
+
+            <controls:CustomButton
+                Text="Change Text"
+                Clicked="TextButton_Clicked"
+                CharacterSpacing="2"
+                HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
