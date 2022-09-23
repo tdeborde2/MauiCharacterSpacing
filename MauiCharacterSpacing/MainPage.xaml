@@ -11,7 +11,7 @@
             VerticalOptions="Center">
 
             <Label
-                Text="MAUI Button"
+                Text="Button"
                 FontSize="32"
                 HorizontalOptions="Center"/>
 
@@ -28,7 +28,7 @@
                 HorizontalOptions="Center"/>
 
             <Label
-                Text="Custom Button with workaround"
+                Text="Button with workaround"
                 FontSize="32"
                 HorizontalOptions="Center"/>
 

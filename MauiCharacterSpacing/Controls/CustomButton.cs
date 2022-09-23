@@ -11,10 +11,10 @@ public class CustomButton : Button
 
 	protected override void OnSizeAllocated(double width, double height)
 	{
-		if(!_sizeAllocated)
+		if(!_sizeAllocated && WidthRequest == -1 && HorizontalOptions.Alignment != LayoutAlignment.Fill)
 		{
 			_sizeAllocated = true;
-			WidthRequest = width + ((Text.Length - 1) * CharacterSpacing);
+			this.WidthRequest = width + ((Text.Length - 1) * CharacterSpacing);
 			return;
 		}
 		base.OnSizeAllocated(width, height);
@@ -27,7 +27,7 @@ public class CustomButton : Button
 		{
 			if (_sizeAllocated)
 			{
-				WidthRequest = double.NaN;
+				WidthRequest = -1;
 				_sizeAllocated = false;
 			}
 		}
@@ -36,7 +36,7 @@ public class CustomButton : Button
 	protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
 	{
 		base.OnPropertyChanged(propertyName);
-		if (_sizeAllocated)
+		if (_sizeAllocated && HorizontalOptions.Alignment != LayoutAlignment.Fill)
 		{
 			if (propertyName == "CharacterSpacing")
 			{
